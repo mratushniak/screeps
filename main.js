@@ -3,7 +3,7 @@ module.exports.loop = function () {
 	const creepLimit = 12;
 	const creepBody = [ WORK, WORK, CARRY, MOVE ];
     
-    creepCost = 0;
+    var creepCost = 0;
     for (let bodyPart of creepBody) {
         creepCost += BODYPART_COST[bodyPart];
     }
