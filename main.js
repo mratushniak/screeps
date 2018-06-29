@@ -1,6 +1,6 @@
 module.exports.loop = function () {
 
-	const creepLimit = 16;
+	const creepLimit = 12;
 	const creepBody = [ WORK, WORK, CARRY, MOVE ];
     
     creepCost = 0;
@@ -102,7 +102,8 @@ function creepReturn( creep, creepCount, creepLimit, creepCost ) {
 	    if ( creep.upgradeController( creep.room.controller != OK )) {
 	        creep.moveTo( creep.room.controller );
 	    }
-	} else if (( creep.serialNum < 1 || creep.ticksToLive < 150 ) && ( creepCount < creepLimit || creep.room.controller.energy < creep.room.controller.energyCapacity - creep.ticksToLive )) {
+	} else if (( creep.serialNum < 1 || creep.ticksToLive < 150 ) &&
+	           ( creepCount < creepLimit || creep.room.controller.energy < creep.room.controller.energyCapacity - creep.ticksToLive )) {
 	    if ( creep.transfer( closestSpawn, RESOURCE_ENERGY ) != OK ) {
 		    creep.moveTo( closestSpawn );
 	    }
