@@ -17,11 +17,11 @@ module.exports.loop = function () {
 		creep.serialNum = creepCount;
 		creepCount++;
 	}
-	if (Game.time % 10 == 0) console.log('There are', creepCount, 'creeps.');
+	if (Game.time % 8 === 0) console.log('There are', creepCount, 'creeps.');
 	
 	// memory management
 	
-	if ( Game.time % 1000 === 0 ) {
+	if ( Game.time % 5000 === 0 ) {
 		console.log( "cleaning memory at tick", Game.time, "..." ) ;
 		for ( let creepName in Memory.creeps ) {
 			if ( Game.creeps [ creepName ] === undefined ) {
